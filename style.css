@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --text: 1.5rem;
+    --head: calc(1rem + 4vw);      /*variable to change the size of text as per the window size of our browser*/
+    --bg-color: #eb4d4b;    /*var to apply button color*/
+}
+
+body{
+    font-family: 'Roboto', sans-serif;      /* to apply fonts to navigation bars & all other texts on the webpage */
+}
+
+.Section{
+    min-height: 105vh;      /*length of the page*/
+    background: linear-gradient(black 2%, transparent) /*    opacity of the background */
+    ,url('food3.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;     /*to cover the entire background image */
+    animation: slide 1.3s ease;
+}
+
+.NavBar{
+    display: flex;      /*aligns all content in one line*/
+    justify-content: space-between;    /*creates space between the contents */
+    align-items: center;      /*  aligns the content at center  */  
+    height: 8vh; 
+    padding: 0rem 1rem;
+    color: white;
+    transform: translateY(-100%);       /*adds the home-about-services-contact in animated form*/
+    animation: movedown 850ms ease-in 1.1s forwards;       /*adds the home-about-services-contact in animated form*/
+}
+
+@keyframes movedown{
+    from{
+        transform: translateY(-100%);
+    }
+    to{
+        transform: translateY(0%);
+    }
+}
+
+.NavBar ul li{
+    
+    display: inline-block;      /*aligns the items in one line*/
+    margin: 0.5rem;    /*creates spacing between list items*/
+  
+}
+
+.NavBar ul li a{
+    
+    text-decoration: none;
+    color: white;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 200ms linear;
+}
+
+.NavBar ul li a:hover{
+    border-bottom: 2.0px solid white;
+}
+
+.Sectiontext{
+    color: white;
+    height: 90vh;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    
+    /* margin: 15rem 29rem 15rem 33rem; */ 
+}
+
+@keyframes slide{
+    from{
+        transform: translateX(-100%);
+    }
+    to{
+        transform: translateX(0%);
+    }
+}
+
+.Sectiontext a{
+    text-decoration: none;
+    color: white;
+    background-color: var(--bg-color);
+    font-weight: 900;
+    padding: 0.8rem 1rem;
+    font-size: 50x;
+    margin: 2.5rem auto;
+    border-radius: 20px;
+    /* display: block; */
+    transition: opacity 250ms linear;
+}
+
+.Sectiontext a:hover{
+    opacity: 0.8;
+}
+
+.Sectiontext h2{
+    font-size: var(--head);
+    /* animation: slide 2.0s ease; */
+}
+
+.Sectiontext p{
+    font-size: 1.5rem;
+}
